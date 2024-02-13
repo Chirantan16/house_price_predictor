@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Price Predictor</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #a1e39b;
+            font-family: 'Minion Pro';
+            font-weight: bold; /* Light yellow background */
+        }
+
+        header {
+            background-image: url('static/bghead.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 5px solid #000000;
+        }
+
+        h1 {
+            font-family: 'Minion Pro';
+            font-size: 40px;
+            color: #000000;
+        }
+
+        .container {
+            margin: 20px auto;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            background-color: #3bb950; /* Light yellow background */
+            padding: 20px;
+        }
+
+        .form-container {
+            flex: 1;
+            background-color: rgb(194, 145, 102); /* Cyan background for the forms */
+            padding: 20px;
+            border-radius: 10px;
+            margin-right: 20px; /* Add some space between forms and image */
+            border: 2px solid #000000;
+        }
+
+        .input-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 300px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #000000;
+            font-size: 15px;
+            font-family: 'Minion Pro';
+            font-weight: bold;
+            margin-bottom: 15px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .image-container {
+            flex: 1;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: 500px;
+            width: 500px;
+            display: block;
+            border-radius: 5px;
+            border: 2px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Housing Price Predictor</h1>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <form class="input-form" method="POST", action="{{url_for('home')}}">
+                <label for="house-area">House Area:</label>
+                <input type="text" id="house-area" name="a" required>
+
+                <label for="num-rooms">Number of Rooms:</label>
+                <input type="text" id="num-rooms" name="b" required>
+
+                <label for="num-bathrooms">Number of Bathrooms:</label>
+                <input type="text" id="num-bathrooms" name="c" required>
+
+                <label for="locality-standard">Locality Standard:</label>
+                <input type="text" id="locality-standard" name="d" required>
+
+                <label for="tax">Tax Percentage of the Area:</label>
+                <input type="text" id="tax" name="e" required>
+
+                <input type="submit" , value='Predict' >
+            </form>
+        </div>
+        <div class="image-container">
+            <img src="static\house.jpg" alt="Beautiful House">
+        </div>
+    </div>
+</body>
+</html>
