@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Housing Price Predictor</title>
+    <title>Seattle Housing Price Predictor</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
         body {
+            background-image: url('static/bg.jpg');
+            background-size: cover;
             margin: 0;
             padding: 0;
             background-color: #a1e39b;
@@ -34,7 +36,7 @@
             width: 80%;
             display: flex;
             justify-content: center;
-            background-color: #3bb950; /* Light yellow background */
+            /*background-color: #a1e39b;  Light yellow background */
             padding: 20px;
         }
 
@@ -99,7 +101,20 @@
         .image-container img {
             max-width: 100%;
             height: 420px;
-            width: 500px;
+            width: 550px;
+            display: block;
+            border-radius: 5px;
+            border: 2px solid #000000;
+        }
+
+        .image2-container {
+            flex: 1;
+        }
+
+        .image2-container img {
+            max-width: 100%;
+            height: 420px;
+            width: 6000px;
             display: block;
             border-radius: 5px;
             border: 2px solid #000000;
@@ -108,8 +123,13 @@
 </head>
 <body>
     <header>
-        <h1>Housing Price Predictor</h1>
+        <h1>Seattle Housing Price Predictor</h1>
     </header>
+    <div class="container">
+        <div class="image2-container">
+            <img src="static\Description.jpg" alt="Beautiful House">
+        </div>
+    </div>
     <div class="container">
         <div class="form-container">
             <form class="input-form" method="POST", action="{{url_for('home')}}">
