@@ -1,0 +1,5 @@
+This database contains prices of house in Seattle based on the below mentioned features:
+1. Number of Bedrooms.
+2. Number of Bathrooms.
+3. Area of house in sq ft.
+4. PIN Code of the area.
