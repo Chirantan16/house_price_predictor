@@ -19,10 +19,9 @@ def home():
     data2 = request.form['b']
     data3 = request.form['c']
     data4 = request.form['d']
-    data5 = request.form['e']
-    arr = np.array([[data1, data2, data3, data4, data5]])
+    arr = np.array([[data1, data2, data3, data4]])
     pred = model.predict(arr)
-    first_number = pred.item(0) * 10000
+    first_number = int(pred.item(0))
     print(first_number)
     return render_template('after.html', data=first_number)
 

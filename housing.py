@@ -1,21 +1,24 @@
 import pandas as pd
 import numpy as np
 import pickle
+from sklearn.metrics import  mean_squared_error
+from math import sqrt
+from sklearn.tree import DecisionTreeRegressor
 
-df = pd.read_csv('housing.data')
+df = pd.read_csv('train.csv')
+df1 = pd.read_csv('test.csv')
 
-X = np.array(df.iloc[:, 0:5])
-y = np.array(df.iloc[:, 5:])
+X_train = np.array(df.iloc[:, 0:4])
+y_train = np.array(df.iloc[:, 4:])
 
-from sklearn.preprocessing import LabelEncoder
-le = LabelEncoder()
-y = le.fit_transform(y.reshape(-1))
+X_test = np.array(df.iloc[:, 0:4])
+y_test = np.array(df.iloc[:, 4:])
 
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model = DecisionTreeRegressor()
+model.fit(X_train, y_train)
 
-from sklearn.svm import SVC
-sv = SVC(kernel='linear').fit(X_train,y_train)
+y_predicted = model.predict(X_test)
+print("Root Mean squared error is: ", sqrt(mean_squared_error(y_test, y_predicted)))
 
 
-pickle.dump(sv, open('housing.pkl', 'wb'))
+pickle.dump(model, open('housing.pkl', 'wb'))
