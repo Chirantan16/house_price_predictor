@@ -109,16 +109,56 @@
         }
 
         .image2-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             flex: 1;
         }
 
         .image2-container img {
             max-width: 100%;
-            height: 420px;
-            width: 6000px;
+            height: 300px;
+            width: 600px;
             display: block;
             border-radius: 10px;
             border: 2px solid #000000;
+        }
+
+        .desc-container {
+            flex: 1;
+            font-family: 'Minion Pro';
+            font-size: 20px;
+            background-color: rgb(194, 145, 102); /* Cyan background for the forms */
+            padding: 15px;
+            border-radius: 10px;
+            margin-right: 20px; /* Add some space between forms and image */
+            border: 2px solid #000000;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            margin-right: 50px;
+        }
+
+        .table td {
+            font-size: 15px;
+            border: 2px solid black;
+            padding: 8px;
+        }
+
+        .table th {
+            font-size: 17px;
+            font-weight: bold;
+            background-color: #29a3a3;
+            border: 2px solid black;
+            padding: 8px;
         }
     </style>
 </head>
@@ -127,8 +167,99 @@
         <h1>Seattle Housing Price Predictor</h1>
     </header>
     <div class="container">
-        <div class="image2-container">
-            <img src="static\Description.jpg" alt="Beautiful House">
+        <div class="desc-container">
+            <p>This website is a trained Machine Learning Model to predict the price of houses based
+                on few features (No. of Bedrooms, No. of Bathrooms, Size of the house in sq. ft.
+                and Zip Code of that locality). Below given is a sample data of 5 items, and on the
+                right side is given the correlation of price with different features.</p>
+            <div class="table-container">
+                <table class="table">
+                  <tr>
+                    <th>Sl. No.</th>
+                    <th>beds</th>
+                    <th>baths</th>
+                    <th>size</th>
+                    <th>zip_code</th>
+                    <th>price</th>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>2.5</td>
+                    <td>2590</td>
+                    <td>98144</td>
+                    <td>795000</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>2.0</td>
+                    <td>2240</td>
+                    <td>98106</td>
+                    <td>915000</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>3.0</td>
+                    <td>2040</td>
+                    <td>98107</td>
+                    <td>950000</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3.0</td>
+                    <td>3800</td>
+                    <td>98199</td>
+                    <td>1950000</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>2.0</td>
+                    <td>1042</td>
+                    <td>98102</td>
+                    <td>950000</td>
+                  </tr>
+                </table>
+                <table class="table">
+                  <tr>
+                    <th>Features</th>
+                    <th>Correlation</th>
+                    <th>Indication</th>
+                  </tr>
+                  <tr>
+                    <td>price</td>
+                    <td>1.000000</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>size</td>
+                    <td>0.444140</td>
+                    <td>Strong Positive Correlation</td>
+                  </tr>
+                  <tr>
+                    <td>baths</td>
+                    <td>0.317325</td>
+                    <td rowspan="2">Moderate Positive Correlation</td>
+                  </tr>
+                  <tr>
+                    <td>beds</td>
+                    <td>0.293516</td>
+                  </tr>
+                  <tr>
+                    <td>zip_code</td>
+                    <td>-0.047189</td>
+                    <td>Negligible Correlation</td>
+                  </tr>
+                </table>
+            </div>
+            <p>Below shown are the actual relations between Features and Label (scatter plot) and
+                predicted relation between Features and Label (line plot):</p>
+            <div class="image2-container">
+                <img src="static\Description.jpg" alt="Beautiful House">
+            </div>
         </div>
     </div>
     <div class="container">
