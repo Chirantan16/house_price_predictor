@@ -16,7 +16,7 @@ house_price_predictor/
 │   ├── after.html
 │   └── index.html
 ├── app.py
-├── kafka-env/           # (created after running venv)
+├── kafka-env/           # (created after running venv in ubuntu only)
 ├── housing_desc.txt
 ├── housing.pkl
 ├── housing.py
