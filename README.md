@@ -27,6 +27,8 @@ house_price_predictor/
 
 To Run the Project in Ubuntu a virtual environment needs to be created.
 
+```
 python3 -m venv kafka-env
 source kafka-env/bin/activate
 pip install -r requirements.txt
+```
