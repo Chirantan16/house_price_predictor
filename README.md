@@ -3,6 +3,7 @@ to predict the price of houses based on few parameters.
 
 The Project Directory Tree:
 
+```
 house_price_predictor/
 ├── static/
 │   ├── bg.jpg
@@ -22,6 +23,7 @@ house_price_predictor/
 ├── requirements.txt
 ├── test.csv
 └── train.csv
+```
 
 To Run the Project in Ubuntu a virtual environment needs to be created.
 
